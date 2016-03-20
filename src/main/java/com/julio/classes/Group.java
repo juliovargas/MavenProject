@@ -1,17 +1,24 @@
 package com.julio.classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Group <T> {
+public class Group <T extends Animal> {
 
 	private String name;
 	private List<T> members;
 	
-	public Group(List<T> members) {
+	public Group(String name, List<T> members) {
 		super();
+		this.name = name;
 		this.members = members;
 	}
 
+	public Group() {
+		this.setName("");
+		this.members = new ArrayList<T>();				
+	}
+	
 	public List<T> getMembers() {
 		return members;
 	}
@@ -28,8 +35,7 @@ public class Group <T> {
 		this.name = name;
 	}
 	
-	public void addPersonToGroup(T p) {
+	public void add(T p) {
 		members.add(p);
 	}
-	
 }

@@ -1,7 +1,9 @@
 package com.julio;
 
 import java.util.*;
-import com.julio.classes.Person;
+
+import com.julio.classes.Group;
+import com.julio.classes.Human;
 
 public class Start {
 
@@ -12,25 +14,31 @@ public class Start {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 		
-		Person p1 = new Person ("pepe", 24);
-		Person p2 = new Person ("juan", 21);
+		Human p1 = new Human ("pepe", 24);
+		Human p2 = new Human ("juan", 21);
 		
-		List<Person> l = new ArrayList<Person>();
+		List<Human> l = new ArrayList<Human>();
 		
 		l.add(p1);
 		l.add(p2);
 				
-		for (Person p : l) {
+		for (Human p : l) {
 			System.out.println("Name: " + p.getName());
 		}
 		
-		Iterator<Person> i = l.iterator();
+		Iterator<Human> i = l.iterator();
 		
-		Map<String, Person> map = new HashMap<String, Person>();
+		Map<String, Human> map = new HashMap<String, Human>();
 		
 		map.put("pepe", p1);
 		map.put("juan", p2);
 		
 		System.out.println(map.get("pepe").getName());
+		
+		Group<Human> team1 = new Group<Human>();
+		team1.add(p1);
+		team1.add(p2);
+		
+		System.out.println(team1.getMembers().size());
 	}
 }
