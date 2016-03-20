@@ -2,21 +2,21 @@ package com.julio.classes;
 
 import java.util.List;
 
-public class Group {
+public class Group <T> {
 
 	private String name;
-	private List<Person> members;
+	private List<T> members;
 	
-	public Group(List<Person> members) {
+	public Group(List<T> members) {
 		super();
 		this.members = members;
 	}
 
-	public List<Person> getMembers() {
+	public List<T> getMembers() {
 		return members;
 	}
 
-	public void setMembers(List<Person> members) {
+	public void setMembers(List<T> members) {
 		this.members = members;
 	}
 
@@ -26,6 +26,10 @@ public class Group {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void addPersonToGroup(T p) {
+		members.add(p);
 	}
 	
 }
