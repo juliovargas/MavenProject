@@ -2,8 +2,7 @@ package com.julio;
 
 import java.util.*;
 
-import com.julio.classes.Group;
-import com.julio.classes.Human;
+import com.julio.classes.*;
 
 public class Start {
 
@@ -40,5 +39,31 @@ public class Start {
 		team1.add(p2);
 		
 		System.out.println(team1.getMembers().size());
+		
+		process(team1.getMembers());
+		
+		List<Integer> li = Arrays.asList(1, 2, 3);
+		List<String>  ls = Arrays.asList("one", "two", "three");
+		printList(li);
+		printList(ls);
+		
+	}
+	
+	/**
+	 * Wildcard with upper bound
+	 * @param list
+	 */
+	public static void process(List<? extends Animal> list) { 
+		System.out.println(list.size());
+		
+		for (Animal a : list) {
+			System.out.println(a.getName());
+		}
+	}
+	
+	public static void printList(List<?> list) {
+	    for (Object elem: list)
+	        System.out.print(elem + " ");
+	    System.out.println();
 	}
 }
