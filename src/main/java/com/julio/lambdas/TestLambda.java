@@ -6,11 +6,10 @@ import java.util.List;
 public class TestLambda {
 
 	public static void main(String[] args) {
-		TratarDatos tratarDatos = new TratarDatos();
+		TreatData treatData = new TreatData();
 		
-		List<String> lista = tratarDatos.obtenerDatos(datos -> datos.subList(2, 4));
+		List<String> list = treatData.obtainData(data -> data.subList(2, 4));
 		
-		System.out.println("Resultado: " + Arrays.toString( lista.toArray()) );
-
+		System.out.println("Result: " + Arrays.toString(list.toArray()));
 	}
 }
