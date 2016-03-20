@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -94,6 +96,26 @@ public class Start {
 		loadDefaultProperties();
 	
 		Sandbox sandbox = new Sandbox();
+		
+		//Environment properties
+		Map<String, String> env = System.getenv();
+        for (String envName : env.keySet()) {
+            System.out.format("%s=%s%n", envName, env.get(envName));
+        }
+        
+        //System properties
+        System.out.println(System.getProperty("os.name"));
+        Properties systemProp = System.getProperties();
+        System.out.println(systemProp);
+        /*Enumeration<?> enums = systemProp.propertyNames();
+        for (; enums.hasMoreElements();) {
+            String key = enums.nextElement().toString();
+            System.out.println(enums.nextElement().toString() + " : " + systemProp.getProperty(key));
+        }*/
+        
+        
+        //Functional interfaces and lambda expressions
+        //Comparator c = (a, b) -> Integer.compare(a.length(), b.length());
 	}
 	
 	/**
