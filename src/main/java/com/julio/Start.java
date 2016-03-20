@@ -70,7 +70,8 @@ public class Start {
 		team1.add(p1);
 		team1.add(p2);
 		
-		System.out.println(team1.getMembers().size());
+		System.out.println("Team size: " + team1.getMembers().size());
+		System.out.println("Team leader: " + team1.getLeader().toString());
 		
 		process(team1.getMembers());
 		
@@ -112,10 +113,6 @@ public class Start {
             String key = enums.nextElement().toString();
             System.out.println(enums.nextElement().toString() + " : " + systemProp.getProperty(key));
         }*/
-        
-        
-        //Functional interfaces and lambda expressions
-        //Comparator c = (a, b) -> Integer.compare(a.length(), b.length());
 	}
 	
 	/**
