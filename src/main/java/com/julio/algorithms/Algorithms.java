@@ -36,5 +36,29 @@ public class Algorithms {
 		
 		System.out.println(Collections.min(list));
 		System.out.println(Collections.max(list));
+		
+		System.out.println(evenNumbers("1231235434535345388888"));
+		
+	}
+	
+	public static List<Integer> evenNumbers (String numbers) {
+	    
+	    int num = numbers.length();
+	    
+	    List<Integer> evenNumbers = new ArrayList<Integer>();
+	    
+	    int currentNum;
+	    for (int i=0; i<num; i++) {
+	        currentNum = Integer.parseInt(String.valueOf(numbers.charAt(i)));
+	        if (isEven(currentNum)) {
+	            evenNumbers.add(new Integer(currentNum));
+	        }
+	    } 
+	    
+	    return evenNumbers;
+	}
+
+	public static boolean isEven (int num) {
+	    return (num%2 == 0) ? true : false;
 	}
 }
